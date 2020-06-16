@@ -8,7 +8,7 @@
     <div class="col-md-6">
       <ul>
         {{#each burgers}}
-        {{#unless this.devoured}}
+        {{#unless this.devour}}
         <li>
           <p>{{this.burger_name}}</p>
           <button id="devourBtn" data-id={{this.id}} class="devour" type="submit">Devour</button>
@@ -20,7 +20,7 @@
     <div class="col-md-6">
       <ul>
         {{#each burgers}}
-        {{#if this.devoured}}
+        {{#if this.devour}}
         <li>
           <h5>Devoured!</h5>
           <p>{{this.burger_name}}</p>
@@ -34,7 +34,7 @@
 <div class="container">
   <form>
     <div class="form-group">
-      <div class="row" <label for="ca">Add a Burger to Devour: </label>
+      <div class="row" for="ca">Add a Burger to Devour: </label>
         <input type="text" id="add" name="name" data-eaten="0">
       </div>
       <button id="addBurger" type="submit">Add</button>
