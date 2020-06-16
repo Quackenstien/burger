@@ -1,0 +1,43 @@
+<img id="burger-image" src="https://recipes-secure-graphics.grocerywebsite.com/0_GraphicsRecipes/4589_4k.jpg"
+  width="100%" alt="image of a hamburger on a cutting board">
+
+<h1 class="title" style="text-align: center">Eat-Da-Burger!!</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <ul>
+        {{#each burgers}}
+        {{#unless this.devoured}}
+        <li>
+          <p>{{this.burger_name}}</p>
+          <button id="devourBtn" data-id={{this.id}} class="devour" type="submit">Devour</button>
+        </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul>
+        {{#each burgers}}
+        {{#if this.devoured}}
+        <li>
+          <h5>Devoured!</h5>
+          <p>{{this.burger_name}}</p>
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <div class="row" <label for="ca">Add a Burger to Devour: </label>
+        <input type="text" id="add" name="name" data-eaten="0">
+      </div>
+      <button id="addBurger" type="submit">Add</button>
+    </div>
+  </form>
+</div>
